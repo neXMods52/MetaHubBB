@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("Blade Ball | Meta Hub 0.2", "BloodTheme")
+local Window = Library.CreateLib("Blade Ball | Meta Hub 0.3", "BloodTheme")
 
 -- Assuming you already have "Window" defined as in your previous code
 local ScriptsTab = Window:NewTab("Scripts")
@@ -52,6 +52,87 @@ end)
 
 local LnHub = OtherScriptsSection:NewButton("LN Hub V4", "Script Hub with Lots of script", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/No6No6No7yt/Lumin-Hub/main/BladeV4.lua'))(); 
+end)
+
+local wazureinfo = OtherScriptsSection:NewLabel("W Azure")
+
+local ModeDropdown = OtherScriptsSection:NewDropdown("Mode", "Select a mode", {"Idle", "AimOnly", "Rage", "AI"}, function(selectedOption)
+    getgenv().Mode = selectedOption
+end)
+
+-- Create a checkbox for "AIJumpState"
+local AIJumpCheckbox = OtherScriptsSection:NewToggle("AIJumpState", "Allow AI to Jump", function(state)
+    getgenv().AIJumpState = state
+end)
+
+-- Create a checkbox for "StopAutoParry"
+local StopAutoParryCheckbox = OtherScriptsSection:NewToggle("StopAutoParry", "Toggle Stop AutoParry", function(state)
+    getgenv().StopAutoParry = state
+end)
+
+-- Create a dropdown for "PingBased"
+local PingBasedDropdown = OtherScriptsSection:NewDropdown("PingBased", "Select an option", {"true", "false"}, function(selectedOption)
+    getgenv().PingBased = selectedOption == "true"
+end)
+
+-- Create a checkbox for "ForceWin"
+local ForceWinCheckbox = OtherScriptsSection:NewToggle("ForceWin", "Toggle Force Win", function(state)
+    getgenv().ForceWin = state
+end)
+
+-- Create a checkbox for "AutoUseSkill"
+local AutoUseSkillCheckbox = OtherScriptsSection:NewToggle("AutoUseSkill", "Toggle Auto Use Skill", function(state)
+    getgenv().AutoUseSkill = state
+end)
+
+-- Create a textbox for "BaseVelocity"
+local BaseVelocityTextbox = OtherScriptsSection:NewTextBox("BaseVelocity", "Enter a new value", function(newValue)
+    getgenv().BaseVelocity = tonumber(newValue) or getgenv().BaseVelocity
+end)
+
+-- Create a textbox for "BasePredictVelocity"
+local BasePredictVelocityTextbox = OtherScriptsSection:NewTextBox("BasePredictVelocity", "Enter a new value", function(newValue)
+    getgenv().BasePredictVelocity = tonumber(newValue) or getgenv().BasePredictVelocity
+end)
+
+-- Create a checkbox for "VisualizePath"
+local VisualizePathCheckbox = OtherScriptsSection:NewToggle("VisualizePath", "Toggle Visualize Path", function(state)
+    getgenv().VisualizePath = state
+end)
+
+-- Create a checkbox for "AutoSpamClickDetect"
+local AutoSpamClickDetectCheckbox = OtherScriptsSection:NewToggle("AutoSpamClickDetect", "Toggle Auto Spam Click Detect", function(state)
+    getgenv().AutoSpamClickDetect = state
+end)
+
+-- Create a checkbox for "CloseRangeAttack"
+local CloseRangeAttackCheckbox = OtherScriptsSection:NewToggle("CloseRangeAttack", "Toggle Close Range Attack", function(state)
+    getgenv().CloseRangeAttack = state
+end)
+
+-- Create a textbox for "AutoClickKeyBind"
+local AutoClickKeyBindTextbox = OtherScriptsSection:NewTextBox("AutoClickKeyBind", "Enter a new key", function(newValue)
+    getgenv().AutoClickKeyBind = newValue
+end)
+
+-- Create a textbox for "AutoClickThreshold"
+local AutoClickThresholdTextbox = OtherScriptsSection:NewTextBox("AutoClickThreshold", "Enter a new value", function(newValue)
+    getgenv().AutoClickThreshold = tonumber(newValue) or getgenv().AutoClickThreshold
+end)
+
+-- Create a textbox for "DistanceBall"
+local DistanceBallTextbox = OtherScriptsSection:NewTextBox("DistanceBall", "Enter a new value", function(newValue)
+    getgenv().DistanceBall = tonumber(newValue) or getgenv().DistanceBall
+end)
+
+-- Create a checkbox for "NoUi"
+local NoUiCheckbox = OtherScriptsSection:NewToggle("NoUi", "Toggle No UI", function(state)
+    getgenv().NoUi = state
+end)
+
+-- Create a button to execute the main script
+local ExecuteMainScriptButton = OtherScriptsSection:NewButton("Run", "Run the main script", function()
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/fd07660d92cb26891e9acfab9f0c6ba4.lua"))()
 end)
 
 local MainTab = Window:NewTab("Main")
