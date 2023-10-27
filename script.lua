@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("Blade Ball | Meta Hub", "BloodTheme")
+local Window = Library.CreateLib("Blade Ball | Meta Hub 0.2", "BloodTheme")
 
 -- Assuming you already have "Window" defined as in your previous code
 local ScriptsTab = Window:NewTab("Scripts")
@@ -46,6 +46,10 @@ local ExecuteAzureHub = OtherScriptsSection:NewButton("Azure Hub (PC)", "Spam Pa
     loadstring(game:HttpGet('https://angxlzz.dev/azure.lua'))()
 end)
 
+local XnoxHub = OtherScriptsSection:NewButton("Xnox Hub", "Script Hub (9 Scripts)", function()
+    loadstring(game:HttpGet("https://paste.gg/p/anonymous/42c468c6f0d94d6a86fc90caf7f0e897/files/9d3a059ff4064dc0b9efe621c774d175/raw"))()
+end)
+
 local LnHub = OtherScriptsSection:NewButton("LN Hub V4", "Script Hub with Lots of script", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/No6No6No7yt/Lumin-Hub/main/BladeV4.lua'))(); 
 end)
@@ -70,7 +74,7 @@ end)
 
 -- Assuming you already have "Window" defined as in your previous code
 
-local InfoTab = Window:NewTab("Info")
+local InfoTab = Window:NewTab("Misc")
 local InfoSection = InfoTab:NewSection("V--Player Info--V")
 
 local player = game.Players.LocalPlayer
