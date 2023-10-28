@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("Blade Ball | Meta Hub 0.3", "BloodTheme")
+local Window = Library.CreateLib("Blade Ball | Meta Hub 0.5", "BloodTheme")
 
 -- Assuming you already have "Window" defined as in your previous code
 local ScriptsTab = Window:NewTab("Scripts")
@@ -54,6 +54,11 @@ local LnHub = OtherScriptsSection:NewButton("LN Hub V4", "Script Hub with Lots o
     loadstring(game:HttpGet('https://raw.githubusercontent.com/No6No6No7yt/Lumin-Hub/main/BladeV4.lua'))(); 
 end)
 
+local AlchemyScript = OtherScriptsSection:NewButton("Alchemy Hub", "Run the Alchemy script", function()
+    local v = 1
+    loadstring(game:HttpGet("https://alchemyhub.xyz/v2"))()
+end)
+
 local wazureinfo = OtherScriptsSection:NewLabel("W Azure")
 
 local ModeDropdown = OtherScriptsSection:NewDropdown("Mode", "Select a mode", {"Idle", "AimOnly", "Rage", "AI"}, function(selectedOption)
@@ -61,27 +66,27 @@ local ModeDropdown = OtherScriptsSection:NewDropdown("Mode", "Select a mode", {"
 end)
 
 -- Create a checkbox for "AIJumpState"
-local AIJumpCheckbox = OtherScriptsSection:NewToggle("AIJumpState", "Allow AI to Jump", function(state)
+local AIJumpCheckbox = OtherScriptsSection:NewToggle("AI JumpState ", "Allow AI to Jump", function(state)
     getgenv().AIJumpState = state
 end)
 
 -- Create a checkbox for "StopAutoParry"
-local StopAutoParryCheckbox = OtherScriptsSection:NewToggle("StopAutoParry", "Toggle Stop AutoParry", function(state)
+local StopAutoParryCheckbox = OtherScriptsSection:NewToggle("Stop Auto Parry", "Toggle Stop AutoParry", function(state)
     getgenv().StopAutoParry = state
 end)
 
 -- Create a dropdown for "PingBased"
-local PingBasedDropdown = OtherScriptsSection:NewDropdown("PingBased", "Select an option", {"true", "false"}, function(selectedOption)
+local PingBasedDropdown = OtherScriptsSection:NewDropdown("Ping-Based", "Select an option", {"true", "false"}, function(selectedOption)
     getgenv().PingBased = selectedOption == "true"
 end)
 
 -- Create a checkbox for "ForceWin"
-local ForceWinCheckbox = OtherScriptsSection:NewToggle("ForceWin", "Toggle Force Win", function(state)
+local ForceWinCheckbox = OtherScriptsSection:NewToggle("Force Win (W Azure Paid)", "Toggle Force Win", function(state)
     getgenv().ForceWin = state
 end)
 
 -- Create a checkbox for "AutoUseSkill"
-local AutoUseSkillCheckbox = OtherScriptsSection:NewToggle("AutoUseSkill", "Toggle Auto Use Skill", function(state)
+local AutoUseSkillCheckbox = OtherScriptsSection:NewToggle("Auto Use Skill", "Toggle Auto Use Skill", function(state)
     getgenv().AutoUseSkill = state
 end)
 
@@ -96,37 +101,37 @@ local BasePredictVelocityTextbox = OtherScriptsSection:NewTextBox("BasePredictVe
 end)
 
 -- Create a checkbox for "VisualizePath"
-local VisualizePathCheckbox = OtherScriptsSection:NewToggle("VisualizePath", "Toggle Visualize Path", function(state)
+local VisualizePathCheckbox = OtherScriptsSection:NewToggle("Visualize Path", "Toggle Visualize Path", function(state)
     getgenv().VisualizePath = state
 end)
 
 -- Create a checkbox for "AutoSpamClickDetect"
-local AutoSpamClickDetectCheckbox = OtherScriptsSection:NewToggle("AutoSpamClickDetect", "Toggle Auto Spam Click Detect", function(state)
+local AutoSpamClickDetectCheckbox = OtherScriptsSection:NewToggle("Auto Spam-Click Detect", "Toggle Auto Spam Click Detect", function(state)
     getgenv().AutoSpamClickDetect = state
 end)
 
 -- Create a checkbox for "CloseRangeAttack"
-local CloseRangeAttackCheckbox = OtherScriptsSection:NewToggle("CloseRangeAttack", "Toggle Close Range Attack", function(state)
+local CloseRangeAttackCheckbox = OtherScriptsSection:NewToggle("Close Range Attack", "Toggle Close Range Attack", function(state)
     getgenv().CloseRangeAttack = state
 end)
 
 -- Create a textbox for "AutoClickKeyBind"
-local AutoClickKeyBindTextbox = OtherScriptsSection:NewTextBox("AutoClickKeyBind", "Enter a new key", function(newValue)
+local AutoClickKeyBindTextbox = OtherScriptsSection:NewTextBox("AutoClick KeyBind", "Enter a new key", function(newValue)
     getgenv().AutoClickKeyBind = newValue
 end)
 
 -- Create a textbox for "AutoClickThreshold"
-local AutoClickThresholdTextbox = OtherScriptsSection:NewTextBox("AutoClickThreshold", "Enter a new value", function(newValue)
+local AutoClickThresholdTextbox = OtherScriptsSection:NewTextBox("Autoclick Threshold", "Enter a new value", function(newValue)
     getgenv().AutoClickThreshold = tonumber(newValue) or getgenv().AutoClickThreshold
 end)
 
 -- Create a textbox for "DistanceBall"
-local DistanceBallTextbox = OtherScriptsSection:NewTextBox("DistanceBall", "Enter a new value", function(newValue)
+local DistanceBallTextbox = OtherScriptsSection:NewTextBox("Distance Ball", "Enter a new value", function(newValue)
     getgenv().DistanceBall = tonumber(newValue) or getgenv().DistanceBall
 end)
 
 -- Create a checkbox for "NoUi"
-local NoUiCheckbox = OtherScriptsSection:NewToggle("NoUi", "Toggle No UI", function(state)
+local NoUiCheckbox = OtherScriptsSection:NewToggle("No UI", "Toggle No UI", function(state)
     getgenv().NoUi = state
 end)
 
