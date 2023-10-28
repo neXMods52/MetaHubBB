@@ -153,6 +153,25 @@ local DeleteAnticheat = AnticheatSection:NewButton("Delete Anticheat", "Disable 
     NotificationService:CreateNotification(notificationInfo):SetLifeSpan(5)
 end)
 
+local crateSection = MainTab:NewSection("Crates")
+
+local swordNormal = crateSection:NewButton("Buy Normal Sword Crate", "Buys the sword crate for 80 coins", function()
+    local args = {
+    [1] = "PromptPurchaseCrate",
+    [2] = workspace.Spawn.Crates.NormalSwordCrate
+}
+
+game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
+end)
+
+local ExploNormal = crateSection:NewButton("Buy Normal Explosion Crate", "Buys the explosion crate for 80 coins", function()
+    local args = {
+    [1] = "PromptPurchaseCrate",
+    [2] = workspace.Spawn.Crates.NormalExplosionCrate
+}
+
+game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
+end)
 -- Assuming you already have "Window" defined as in your previous code
 
 local InfoTab = Window:NewTab("Misc")
