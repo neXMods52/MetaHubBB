@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("Blade Ball | Meta Hub 0.5", "BloodTheme")
+local Window = Library.CreateLib("Blade Ball | Meta Hub 0.6", "BloodTheme")
 
 -- Assuming you already have "Window" defined as in your previous code
 local ScriptsTab = Window:NewTab("Scripts")
@@ -57,6 +57,10 @@ end)
 local AlchemyScript = OtherScriptsSection:NewButton("Alchemy Hub", "Run the Alchemy script", function()
     local v = 1
     loadstring(game:HttpGet("https://alchemyhub.xyz/v2"))()
+end)
+
+local lue = OtherScriptsSection:NewButton("Luy Hub (Trash)", "Old script,it's trash", function()
+    loadstring(game:HttpGet('https://shz.al/~LUYHUB'))()
 end)
 
 local wazureinfo = OtherScriptsSection:NewLabel("W Azure")
