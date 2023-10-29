@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("Blade Ball | Meta Hub 0.6", "BloodTheme")
+local Window = Library.CreateLib("Blade Ball | Meta Hub 0.6", "Ocean")
 
 -- Assuming you already have "Window" defined as in your previous code
 local ScriptsTab = Window:NewTab("Scripts")
@@ -61,6 +61,10 @@ end)
 
 local lue = OtherScriptsSection:NewButton("Luy Hub (Trash)", "Old script,it's trash", function()
     loadstring(game:HttpGet('https://shz.al/~LUYHUB'))()
+end)
+
+local visualHub = OtherScriptsSection:NewButton("Visual Hub (Key:IUseVisualFree)", "Visual V5 God (IUseVisualFree)", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/DevTravDYT/dsaaswadfeszad/main/Testt'))()
 end)
 
 local wazureinfo = OtherScriptsSection:NewLabel("W Azure")
