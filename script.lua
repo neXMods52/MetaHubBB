@@ -67,6 +67,16 @@ local visualHub = OtherScriptsSection:NewButton("Visual Hub (Key:IUseVisualFree)
     loadstring(game:HttpGet('https://raw.githubusercontent.com/DevTravDYT/dsaaswadfeszad/main/Testt'))()
 end)
 
+local redCircleLabel = OtherScriptsSection:NewLabel("Red Circle Auto parry")
+
+local visualizerRedCircle = OtherScriptsSection:NewDropdown("Visualizer Red Circle?", "True or false", {"true", "false"}, function(selectedOption)
+    getgenv().visualizer = selectedOption
+end)
+
+local redCircle = OtherScriptsSection:NewButton("Red Circle Auto Block", "You can configure the visual in the dropdown", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/RedCircleBlock"))()
+end)
+
 local wazureinfo = OtherScriptsSection:NewLabel("W Azure")
 
 local ModeDropdown = OtherScriptsSection:NewDropdown("Mode", "Select a mode", {"Idle", "AimOnly", "Rage", "AI"}, function(selectedOption)
