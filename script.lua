@@ -74,6 +74,7 @@ local visualizerRedCircle = OtherScriptsSection:NewDropdown("Visualizer Red Circ
 end)
 
 local redCircle = OtherScriptsSection:NewButton("Red Circle Auto Block", "You can configure the visual in the dropdown", function()
+    getgenv().visualizer = visualizerRedCircle.selectedOption
     loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/RedCircleBlock"))()
 end)
 
