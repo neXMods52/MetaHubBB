@@ -1,20 +1,20 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("Blade Ball | Meta Hub 0.7", "Ocean")
+local Window = Library.CreateLib("Blade Ball | Meta Hub 1.0", "Ocean")
 
 -- Assuming you already have "Window" defined as in your previous code
 local ScriptsTab = Window:NewTab("Scripts")
 local OtherScriptsSection = ScriptsTab:NewSection("Other Scripts")
 
 -- Add a label
-local Label = OtherScriptsSection:NewLabel("DISABLE ANTICHEAT IN THE MAIN PAGE BEFORE USING THIS TAB")
+local Label = OtherScriptsSection:NewLabel("DISABLE ANTICHEAT IN THE MAIN PAGE BEFORE USING")
 
 -- Add a button
-local ExecuteBedolHubButton = OtherScriptsSection:NewButton("Execute Bedol Hub 7.5", "Execute Bedol Hub Script", function()
+local ExecuteBedolHubButton = OtherScriptsSection:NewButton("Execute Bedol Hub 7.5", "Execute Bedol Hub 7.5 Ultra Pro Max", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/SourceLua/main/Blade_Ball.lua"))()
 end)
 
 -- Add a textbox for modifying UI Size
-local UISizeTextbox = OtherScriptsSection:NewTextBox("Edit Bedol Next Gen UI Size", "Enter a new value (Default: 200)", function(newSize)
+local UISizeTextbox = OtherScriptsSection:NewTextBox("Bedol Next gen UI Size", "Enter a new value (Default: 200)", function(newSize)
     local newSizeNumber = tonumber(newSize)
 
     if newSizeNumber then
@@ -24,7 +24,7 @@ local UISizeTextbox = OtherScriptsSection:NewTextBox("Edit Bedol Next Gen UI Siz
     end
 end)
 
-local ExecuteBedolNextGenButton = OtherScriptsSection:NewButton("Execute Bedol Next Gen", "Execute Bedol Next Gen Script", function()
+local ExecuteBedolNextGenButton = OtherScriptsSection:NewButton("Bedol Next Generation (☆)", "Execute Bedol Next Gen Script", function()
     game:GetService("ReplicatedStorage").Security.RemoteEvent:Destroy()
     game:GetService("ReplicatedStorage").Security[""]:Destroy()
     game:GetService("ReplicatedStorage").Security:Destroy()
@@ -34,11 +34,11 @@ local ExecuteBedolNextGenButton = OtherScriptsSection:NewButton("Execute Bedol N
     loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/-beta-/main/AutoParry.lua"))()
 end)
 
-local ExecuteScriptAlienHub = OtherScriptsSection:NewButton("Execute Alien Hub", "Script needs key", function()
+local ExecuteScriptAlienHub = OtherScriptsSection:NewButton("Execute Alien Hub (Key)", "Script needs key", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/romkich09/keySystem/main/mainKey", true))()
 end)
 
-local ExecuteBlueParryGUI = OtherScriptsSection:NewButton("Execute Crazy Hub", "Autoparry no gui", function()
+local ExecuteBlueParryGUI = OtherScriptsSection:NewButton("Execute Crazy Hub (☆)", "Autoparry no gui", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/kmmwhocare/Crazzy-Hub/main/Blade%20Ball"))()
 end) 
 
@@ -50,11 +50,23 @@ local XnoxHub = OtherScriptsSection:NewButton("Xnox Hub", "Script Hub (9 Scripts
     loadstring(game:HttpGet("https://paste.gg/p/anonymous/42c468c6f0d94d6a86fc90caf7f0e897/files/9d3a059ff4064dc0b9efe621c774d175/raw"))()
 end)
 
-local LnHub = OtherScriptsSection:NewButton("LN Hub V4", "Script Hub with Lots of script", function()
+local projectnv = OtherScriptsSection:NewButton("Project Nova", "OP,Blink Parry and More!", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Synergy-Networks/products/main/ProjectNova/loader.lua",true))()
+end)
+
+local LnHub = OtherScriptsSection:NewButton("LN Hub V4 (☆)", "Script Hub with Lots of script", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/No6No6No7yt/Lumin-Hub/main/BladeV4.lua'))(); 
 end)
 
-local AlchemyScript = OtherScriptsSection:NewButton("Alchemy Hub", "Run the Alchemy script", function()
+local symphonyHub = OtherScriptsSection:NewButton("Symphony Hub", "Needs Key,Lots of Feature", function()
+    local a,b,c,d=loadstring,request or http_request or (http and http.request) or (syn and syn.request),assert,"https://itsjidy.github.io/SymphonyHub/Loader.html"c(a and b, "Your Executor does not support.")a(b({Url=d,Method="GET"}).Body)()
+end)
+
+local Winnable = OtherScriptsSection:NewButton("Winnable Hub", "! NOT TESTED", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Winnablez/Winnable/main/Loader"))
+end)
+
+local AlchemyScript = OtherScriptsSection:NewButton("Alchemy Hub (key needed)", "(Key Required)Run the Alchemy Hub script", function()
     local v = 1
     loadstring(game:HttpGet("https://alchemyhub.xyz/v2"))()
 end)
