@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("Blade Ball | Meta Hub 0.6", "Ocean")
+local Window = Library.CreateLib("Blade Ball | Meta Hub 0.7", "Ocean")
 
 -- Assuming you already have "Window" defined as in your previous code
 local ScriptsTab = Window:NewTab("Scripts")
@@ -61,6 +61,14 @@ end)
 
 local lue = OtherScriptsSection:NewButton("Luy Hub (Trash)", "Old script,it's trash", function()
     loadstring(game:HttpGet('https://shz.al/~LUYHUB'))()
+end)
+
+local hax3 = OtherScriptsSection:NewButton("3Haxx", "No Info", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TypZeroSVK/Scripts/main/BladeBall%20Beta-1.0.0"))()
+end)
+
+local fujihub = OtherScriptsSection:NewButton("Fuji Hub", "Auto Parries", function()
+    loadstring(game:HttpGet("https://shz.al/~main/dread/Fuji-Hub/script"))()
 end)
 
 local visualHub = OtherScriptsSection:NewButton("Visual Hub (Key:IUseVisualFree)", "Visual V5 God (IUseVisualFree)", function()
