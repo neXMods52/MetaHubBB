@@ -226,7 +226,7 @@ local ExploNormal = crateSection:NewButton("Buy Normal Explosion Crate", "Buys t
 game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
 end)
 
-local halloweenCrate = CrateSection:NewButton("Buy Halloween Crate (1000 Coins)", "Requires 1000 coins and buys the Halloween", function()
+local halloweenCrate = crateSection:NewButton("Buy Halloween Crate (1000 Coins)", "Requires 1000 coins and buys the Halloween", function()
     local args = {
     [1] = "PromptPurchaseCrate",
     [2] = workspace.Spawn.Crates.HalloweenSwordCrate
