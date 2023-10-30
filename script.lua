@@ -9,8 +9,17 @@ local OtherScriptsSection = ScriptsTab:NewSection("Other Scripts")
 local Label = OtherScriptsSection:NewLabel("DISABLE ANTICHEAT IN THE MAIN PAGE BEFORE USING")
 
 -- Add a button
-local ExecuteBedolHubButton = OtherScriptsSection:NewButton("Execute Bedol Hub 7.5", "Execute Bedol Hub 7.5 Ultra Pro Max", function()
+local BedolHubButton = OtherScriptsSection:NewButton("Bedol Hub 7.5", "Execute Bedol Hub 7.5 Ultra Pro Max", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/SourceLua/main/Blade_Ball.lua"))()
+end)
+
+local JayHubButton = OtherScriptsSection:NewButton("Jay Hub", "Run Jay Hub script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/reed192512/KeySystem/main/KeySystem.txt", true))()
+end)
+
+-- Create a button for executing the zen.cc script
+local ZenCCButton = OtherScriptsSection:NewButton("zen.cc", "Run zen.cc script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xdevslasher/zen.cc/main/zen.cchallowzenupdate.lua", true))()
 end)
 
 -- Add a textbox for modifying UI Size
@@ -212,6 +221,15 @@ local ExploNormal = crateSection:NewButton("Buy Normal Explosion Crate", "Buys t
     local args = {
     [1] = "PromptPurchaseCrate",
     [2] = workspace.Spawn.Crates.NormalExplosionCrate
+}
+
+game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
+end)
+
+local halloweenCrate = CrateSection:NewButton("Buy Halloween Crate (1000 Coins)", "Requires 1000 coins and buys the Halloween", function()
+    local args = {
+    [1] = "PromptPurchaseCrate",
+    [2] = workspace.Spawn.Crates.HalloweenSwordCrate
 }
 
 game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
