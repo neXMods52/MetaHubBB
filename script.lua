@@ -235,7 +235,6 @@ local halloweenCrate = CrateSection:NewButton("Buy Halloween Crate (1000 Coins)"
 game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
 end)
 -- Assuming you already have "Window" defined as in your previous code
-
 local InfoTab = Window:NewTab("Misc")
 
 local server = InfoTab:NewSection("Server")
