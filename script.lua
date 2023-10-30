@@ -43,11 +43,11 @@ local ExecuteBedolNextGenButton = OtherScriptsSection:NewButton("Bedol Next Gene
     loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/-beta-/main/AutoParry.lua"))()
 end)
 
-local ExecuteScriptAlienHub = OtherScriptsSection:NewButton("Execute Alien Hub (Key)", "Script needs key", function()
+local ExecuteScriptAlienHub = OtherScriptsSection:NewButton("Alien Hub (Key)", "Script needs key", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/romkich09/keySystem/main/mainKey", true))()
 end)
 
-local ExecuteBlueParryGUI = OtherScriptsSection:NewButton("Execute Crazy Hub (☆)", "Autoparry no gui", function()
+local ExecuteBlueParryGUI = OtherScriptsSection:NewButton("Crazy Hub (☆)", "Autoparry no gui", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/kmmwhocare/Crazzy-Hub/main/Blade%20Ball"))()
 end) 
 
@@ -230,6 +230,16 @@ local halloweenCrate = crateSection:NewButton("Buy Halloween Crate (1000 Coins)"
     local args = {
     [1] = "PromptPurchaseCrate",
     [2] = workspace.Spawn.Crates.HalloweenSwordCrate
+}
+
+game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
+end)
+
+local wheel = MainTab:NewSection("Wheels")
+
+local luckywheel = wheel:NewButton("Spin Lucky Wheel", "Requires 1 spin", function()
+    local args = {
+    [1] = "SpinWheel"
 }
 
 game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
