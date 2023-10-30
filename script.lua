@@ -18,7 +18,7 @@ local JayHubButton = OtherScriptsSection:NewButton("Jay Hub", "Run Jay Hub scrip
 end)
 
 -- Create a button for executing the zen.cc script
-local ZenCCButton = OtherScriptsSection:NewButton("zen.cc", "Run zen.cc script", function()
+local ZenCCButton = OtherScriptsSection:NewButton("zen.cc (Key:ZenIsBetter)", "Run zen.cc script", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xdevslasher/zen.cc/main/zen.cchallowzenupdate.lua", true))()
 end)
 
@@ -234,6 +234,7 @@ local halloweenCrate = CrateSection:NewButton("Buy Halloween Crate (1000 Coins)"
 
 game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
 end)
+
 -- Assuming you already have "Window" defined as in your previous code
 local InfoTab = Window:NewTab("Misc")
 
