@@ -22,6 +22,10 @@ local ZenCCButton = OtherScriptsSection:NewButton("zen.cc (Key:ZenIsBetter)", "R
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xdevslasher/zen.cc/main/zen.cchallowzenupdate.lua", true))()
 end)
 
+local lazium = OtherScriptsSection:NewButton("Lazium Hub", "Lazium Loader Script hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/InfinityMercury/Scripts/main/BladeBall/loader.lua",true))()
+end)
+
 -- Add a textbox for modifying UI Size
 local UISizeTextbox = OtherScriptsSection:NewTextBox("Bedol Next gen UI Size", "Enter a new value (Default: 200)", function(newSize)
     local newSizeNumber = tonumber(newSize)
@@ -243,6 +247,44 @@ local luckywheel = wheel:NewButton("Spin Lucky Wheel", "Requires 1 spin", functi
 }
 
 game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
+end)
+
+local gameVoteSection = MainTab:NewSection("Vote Game")
+
+local ffavote = gameVoteSection:NewToggle("Auto Vote FFA", "Votes FFA Automatically", function()
+     while state do
+        local args = {
+            [1] = "FFA"
+        }
+        
+        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_net@0.1.0").net:FindFirstChild("RE/UpdateVotes"):FireServer(unpack(args))
+        
+        wait(1.5) -- Wait for 1 second before the next vote
+    end
+end)
+
+local team4vote = gameVoteSection:NewToggle("Auto Vote 4 team", "Votes 4 Team Automatically", function()
+     while state do
+        local args = {
+            [1] = "Team4"
+        }
+        
+        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_net@0.1.0").net:FindFirstChild("RE/UpdateVotes"):FireServer(unpack(args))
+        
+        wait(1.5) -- Wait for 1 second before the next vote
+    end
+end)
+
+local team2vote = gameVoteSection:NewToggle("Auto Vote 2 Team", "Votes 2 Team Automatically", function()
+     while state do
+        local args = {
+            [1] = "Team2"
+        }
+        
+        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_net@0.1.0").net:FindFirstChild("RE/UpdateVotes"):FireServer(unpack(args))
+        
+        wait(1.5) -- Wait for 1 second before the next vote
+    end
 end)
 
 -- Assuming you already have "Window" defined as in your previous code
