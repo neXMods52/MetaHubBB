@@ -1,404 +1,396 @@
-local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("Blade Ball | Meta Hub 1.0", "Ocean")
+-- Load the Orion Library
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
--- Assuming you already have "Window" defined as in your previous code
-local ScriptsTab = Window:NewTab("Scripts")
-local OtherScriptsSection = ScriptsTab:NewSection("Other Scripts")
+-- Create a window
+local Window = OrionLib:MakeWindow({
+    Name = "Meta Hub 2",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "BladeBallMetaConfig"
+})
 
--- Add a label
-local Label = OtherScriptsSection:NewLabel("DISABLE ANTICHEAT IN THE MAIN PAGE BEFORE USING")
+-- Create a tab "Auto Parries"
+local AutoParriesTab = Window:MakeTab({
+    Name = "Auto Parry",
+    Icon = "rbxassetid://12345678", -- Replace with your icon asset ID
+    PremiumOnly = false
+})
 
--- Add a button
-local BedolHubButton = OtherScriptsSection:NewButton("Bedol Hub 7.5", "Execute Bedol Hub 7.5 Ultra Pro Max", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/SourceLua/main/Blade_Ball.lua"))()
-end)
+-- Create a section
+local AutoParrySection = AutoParriesTab:AddSection({
+    Name = "Auto Parry"
+})
 
-local JayHubButton = OtherScriptsSection:NewButton("Jay Hub", "Run Jay Hub script", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/reed192512/KeySystem/main/KeySystem.txt", true))()
-end)
-
--- Create a button for executing the zen.cc script
-local ZenCCButton = OtherScriptsSection:NewButton("zen.cc (Key:ZenIsBetter)", "Run zen.cc script", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/xdevslasher/zen.cc/main/zen.cchallowzenupdate.lua", true))()
-end)
-
-local lazium = OtherScriptsSection:NewButton("Lazium Hub", "Lazium Loader Script hub", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/InfinityMercury/Scripts/main/BladeBall/loader.lua",true))()
-end)
-
--- Add a textbox for modifying UI Size
-local UISizeTextbox = OtherScriptsSection:NewTextBox("Bedol Next gen UI Size", "Enter a new value (Default: 200)", function(newSize)
-    local newSizeNumber = tonumber(newSize)
-
-    if newSizeNumber then
-        _G.UI_Size = newSizeNumber
-    else
-        _G.UI_Size = 200 -- Default value
-    end
-end)
-
-local ExecuteBedolNextGenButton = OtherScriptsSection:NewButton("Bedol Next Generation (☆)", "Execute Bedol Next Gen Script", function()
-    game:GetService("ReplicatedStorage").Security.RemoteEvent:Destroy()
-    game:GetService("ReplicatedStorage").Security[""]:Destroy()
-    game:GetService("ReplicatedStorage").Security:Destroy()
-    game:GetService("Players").LocalPlayer.PlayerScripts.Client.DeviceChecker:Destroy()
-
-    _G.UI_Size = 200 -- config ui size
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/-beta-/main/AutoParry.lua"))()
-end)
-
-local ExecuteScriptAlienHub = OtherScriptsSection:NewButton("Alien Hub (Key)", "Script needs key", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/romkich09/keySystem/main/mainKey", true))()
-end)
-
-local ExecuteBlueParryGUI = OtherScriptsSection:NewButton("Crazy Hub (☆)", "Autoparry no gui", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/kmmwhocare/Crazzy-Hub/main/Blade%20Ball"))()
-end) 
-
-local ExecuteAzureHub = OtherScriptsSection:NewButton("Azure Hub (PC)", "Spam Parry and Autoparry", function()
-    loadstring(game:HttpGet('https://angxlzz.dev/azure.lua'))()
-end)
-
-local XnoxHub = OtherScriptsSection:NewButton("Xnox Hub", "Script Hub (9 Scripts)", function()
-    loadstring(game:HttpGet("https://paste.gg/p/anonymous/42c468c6f0d94d6a86fc90caf7f0e897/files/9d3a059ff4064dc0b9efe621c774d175/raw"))()
-end)
-
-local projectnv = OtherScriptsSection:NewButton("Project Nova", "OP,Blink Parry and More!", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Synergy-Networks/products/main/ProjectNova/loader.lua",true))()
-end)
-
-local LnHub = OtherScriptsSection:NewButton("LN Hub V4 (☆)", "Script Hub with Lots of script", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/No6No6No7yt/Lumin-Hub/main/BladeV4.lua'))(); 
-end)
-
-local symphonyHub = OtherScriptsSection:NewButton("Symphony Hub", "Needs Key,Lots of Feature", function()
-    local a,b,c,d=loadstring,request or http_request or (http and http.request) or (syn and syn.request),assert,"https://itsjidy.github.io/SymphonyHub/Loader.html"c(a and b, "Your Executor does not support.")a(b({Url=d,Method="GET"}).Body)()
-end)
-
-local Winnable = OtherScriptsSection:NewButton("Winnable Hub", "! NOT TESTED", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Winnablez/Winnable/main/Loader"))
-end)
-
-local AlchemyScript = OtherScriptsSection:NewButton("Alchemy Hub (key needed)", "(Key Required)Run the Alchemy Hub script", function()
-    local v = 1
-    loadstring(game:HttpGet("https://alchemyhub.xyz/v2"))()
-end)
-
-local lue = OtherScriptsSection:NewButton("Luy Hub (Trash)", "Old script,it's trash", function()
-    loadstring(game:HttpGet('https://shz.al/~LUYHUB'))()
-end)
-
-local hax3 = OtherScriptsSection:NewButton("3Haxx", "No Info", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/TypZeroSVK/Scripts/main/BladeBall%20Beta-1.0.0"))()
-end)
-
-local fujihub = OtherScriptsSection:NewButton("Fuji Hub", "Auto Parries", function()
-    loadstring(game:HttpGet("https://shz.al/~main/dread/Fuji-Hub/script"))()
-end)
-
-local visualHub = OtherScriptsSection:NewButton("Visual Hub (Key:IUseVisualFree)", "Visual V5 God (IUseVisualFree)", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/DevTravDYT/dsaaswadfeszad/main/Testt'))()
-end)
-
-local redCircleLabel = OtherScriptsSection:NewLabel("Red Circle Auto parry")
-
-local visualizerRedCircle = OtherScriptsSection:NewDropdown("Visualizer Red Circle?", "True or false", {"true", "false"}, function(selectedOption)
-    getgenv().visualizer = selectedOption
-end)
-
-local redCircle = OtherScriptsSection:NewButton("Red Circle Auto Block", "You can configure the visual in the dropdown", function()
-    getgenv().visualizer = visualizerRedCircle.selectedOption
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/RedCircleBlock"))()
-end)
-
-local wazureinfo = OtherScriptsSection:NewLabel("W Azure")
-
-local ModeDropdown = OtherScriptsSection:NewDropdown("Mode", "Select a mode", {"Idle", "AimOnly", "Rage", "AI"}, function(selectedOption)
-    getgenv().Mode = selectedOption
-end)
-
--- Create a checkbox for "AIJumpState"
-local AIJumpCheckbox = OtherScriptsSection:NewToggle("AI JumpState ", "Allow AI to Jump", function(state)
-    getgenv().AIJumpState = state
-end)
-
--- Create a checkbox for "StopAutoParry"
-local StopAutoParryCheckbox = OtherScriptsSection:NewToggle("Stop Auto Parry", "Toggle Stop AutoParry", function(state)
-    getgenv().StopAutoParry = state
-end)
-
--- Create a dropdown for "PingBased"
-local PingBasedDropdown = OtherScriptsSection:NewDropdown("Ping-Based", "Select an option", {"true", "false"}, function(selectedOption)
-    getgenv().PingBased = selectedOption == "true"
-end)
-
--- Create a checkbox for "ForceWin"
-local ForceWinCheckbox = OtherScriptsSection:NewToggle("Force Win (W Azure Paid)", "Toggle Force Win", function(state)
-    getgenv().ForceWin = state
-end)
-
--- Create a checkbox for "AutoUseSkill"
-local AutoUseSkillCheckbox = OtherScriptsSection:NewToggle("Auto Use Skill", "Toggle Auto Use Skill", function(state)
-    getgenv().AutoUseSkill = state
-end)
-
--- Create a textbox for "BaseVelocity"
-local BaseVelocityTextbox = OtherScriptsSection:NewTextBox("BaseVelocity", "Enter a new value", function(newValue)
-    getgenv().BaseVelocity = tonumber(newValue) or getgenv().BaseVelocity
-end)
-
--- Create a textbox for "BasePredictVelocity"
-local BasePredictVelocityTextbox = OtherScriptsSection:NewTextBox("BasePredictVelocity", "Enter a new value", function(newValue)
-    getgenv().BasePredictVelocity = tonumber(newValue) or getgenv().BasePredictVelocity
-end)
-
--- Create a checkbox for "VisualizePath"
-local VisualizePathCheckbox = OtherScriptsSection:NewToggle("Visualize Path", "Toggle Visualize Path", function(state)
-    getgenv().VisualizePath = state
-end)
-
--- Create a checkbox for "AutoSpamClickDetect"
-local AutoSpamClickDetectCheckbox = OtherScriptsSection:NewToggle("Auto Spam-Click Detect", "Toggle Auto Spam Click Detect", function(state)
-    getgenv().AutoSpamClickDetect = state
-end)
-
--- Create a checkbox for "CloseRangeAttack"
-local CloseRangeAttackCheckbox = OtherScriptsSection:NewToggle("Close Range Attack", "Toggle Close Range Attack", function(state)
-    getgenv().CloseRangeAttack = state
-end)
-
--- Create a textbox for "AutoClickKeyBind"
-local AutoClickKeyBindTextbox = OtherScriptsSection:NewTextBox("AutoClick KeyBind", "Enter a new key", function(newValue)
-    getgenv().AutoClickKeyBind = newValue
-end)
-
--- Create a textbox for "AutoClickThreshold"
-local AutoClickThresholdTextbox = OtherScriptsSection:NewTextBox("Autoclick Threshold", "Enter a new value", function(newValue)
-    getgenv().AutoClickThreshold = tonumber(newValue) or getgenv().AutoClickThreshold
-end)
-
--- Create a textbox for "DistanceBall"
-local DistanceBallTextbox = OtherScriptsSection:NewTextBox("Distance Ball", "Enter a new value", function(newValue)
-    getgenv().DistanceBall = tonumber(newValue) or getgenv().DistanceBall
-end)
-
--- Create a checkbox for "NoUi"
-local NoUiCheckbox = OtherScriptsSection:NewToggle("No UI", "Toggle No UI", function(state)
-    getgenv().NoUi = state
-end)
-
--- Create a button to execute the main script
-local ExecuteMainScriptButton = OtherScriptsSection:NewButton("Run", "Run the main script", function()
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/fd07660d92cb26891e9acfab9f0c6ba4.lua"))()
-end)
-
-local MainTab = Window:NewTab("Main")
--- Assuming you already have "MainTab" defined as in your previous code
-
-local AnticheatSection = MainTab:NewSection("Anticheat")
-
-local DeleteAnticheat = AnticheatSection:NewButton("Delete Anticheat", "Disable Anticheat", function()
-    game:GetService("ReplicatedStorage").Security.RemoteEvent:Destroy()
-    game:GetService("ReplicatedStorage").Security[""]:Destroy()
-    game:GetService("ReplicatedStorage").Security:Destroy()
-    game:GetService("Players").LocalPlayer.PlayerScripts.Client.DeviceChecker:Destroy()
-    local notificationInfo = {
-        Title = "! SCRIPT",
-        Text = "The Anticheat is now disabled !"
-    }
-
-    NotificationService:CreateNotification(notificationInfo):SetLifeSpan(5)
-end)
-
-local crateSection = MainTab:NewSection("Crates")
-
-local swordNormal = crateSection:NewButton("Buy Normal Sword Crate", "Buys the sword crate for 80 coins", function()
-    local args = {
-    [1] = "PromptPurchaseCrate",
-    [2] = workspace.Spawn.Crates.NormalSwordCrate
-}
-
-game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
-end)
-
-local ExploNormal = crateSection:NewButton("Buy Normal Explosion Crate", "Buys the explosion crate for 80 coins", function()
-    local args = {
-    [1] = "PromptPurchaseCrate",
-    [2] = workspace.Spawn.Crates.NormalExplosionCrate
-}
-
-game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
-end)
-
-local halloweenCrate = crateSection:NewButton("Buy Halloween Crate (1000 Coins)", "Requires 1000 coins and buys the Halloween", function()
-    local args = {
-    [1] = "PromptPurchaseCrate",
-    [2] = workspace.Spawn.Crates.HalloweenSwordCrate
-}
-
-game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
-end)
-
-local wheel = MainTab:NewSection("Wheels")
-
-local luckywheel = wheel:NewButton("Spin Lucky Wheel", "Requires 1 spin", function()
-    local args = {
-    [1] = "SpinWheel"
-}
-
-game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
-end)
-
-local gameVoteSection = MainTab:NewSection("Vote Game")
-
-local ffavote = gameVoteSection:NewToggle("Auto Vote FFA", "Votes FFA Automatically", function()
-     while state do
-        local args = {
-            [1] = "FFA"
-        }
+-- Create a button "Auto Parry 1"
+AutoParrySection:AddButton({
+    Name = "Auto Parry",
+    Callback = function()
+        local Debug = true
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+        local Players = game:GetService("Players")
         
-        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_net@0.1.0").net:FindFirstChild("RE/UpdateVotes"):FireServer(unpack(args))
+        local Player = Players.LocalPlayer or Players.PlayerAdded:Wait()
+        local Remotes = ReplicatedStorage:WaitForChild("Remotes", 9e9)
+        local Balls = workspace:WaitForChild("Balls", 9e9)
         
-        wait(1.5) -- Wait for 1 second before the next vote
-    end
-end)
-
-local team4vote = gameVoteSection:NewToggle("Auto Vote 4 team", "Votes 4 Team Automatically", function()
-     while state do
-        local args = {
-            [1] = "Team4"
-        }
-        
-        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_net@0.1.0").net:FindFirstChild("RE/UpdateVotes"):FireServer(unpack(args))
-        
-        wait(1.5) -- Wait for 1 second before the next vote
-    end
-end)
-
-local team2vote = gameVoteSection:NewToggle("Auto Vote 2 Team", "Votes 2 Team Automatically", function()
-     while state do
-        local args = {
-            [1] = "Team2"
-        }
-        
-        game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_net@0.1.0").net:FindFirstChild("RE/UpdateVotes"):FireServer(unpack(args))
-        
-        wait(1.5) -- Wait for 1 second before the next vote
-    end
-end)
-
--- Assuming you already have "Window" defined as in your previous code
-local InfoTab = Window:NewTab("Misc")
-
-local server = InfoTab:NewSection("Server")
-
-local hop = server:NewButton("Server Hop", "", function()
-    local PlaceID = game.PlaceId
-local AllIDs = {}
-local foundAnything = ""
-local actualHour = os.date("!*t").hour
-local Deleted = false
-local File = pcall(function()
-    AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
-end)
-if not File then
-    table.insert(AllIDs, actualHour)
-    writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
-end
-function TPReturner()
-    local Site;
-    if foundAnything == "" then
-        Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
-    else
-        Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
-    end
-    local ID = ""
-    if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
-        foundAnything = Site.nextPageCursor
-    end
-    local num = 0;
-    for i,v in pairs(Site.data) do
-        local Possible = true
-        ID = tostring(v.id)
-        if tonumber(v.maxPlayers) > tonumber(v.playing) then
-            for _,Existing in pairs(AllIDs) do
-                if num ~= 0 then
-                    if ID == tostring(Existing) then
-                        Possible = false
-                    end
-                else
-                    if tonumber(actualHour) ~= tonumber(Existing) then
-                        local delFile = pcall(function()
-                            delfile("NotSameServers.json")
-                            AllIDs = {}
-                            table.insert(AllIDs, actualHour)
-                        end)
-                    end
-                end
-                num = num + 1
-            end
-            if Possible == true then
-                table.insert(AllIDs, ID)
-                wait()
-                pcall(function()
-                    writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
-                    wait()
-                    game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
-                end)
-                wait(4)
+        local function VerifyBall(Ball)
+            if typeof(Ball) == "Instance" and Ball:IsA("BasePart") and Ball:IsDescendantOf(Balls) and Ball:GetAttribute("realBall") == true then
+                return true
             end
         end
-    end
-end
-
-function Teleport()
-    while wait() do
-        pcall(function()
-            TPReturner()
-            if foundAnything ~= "" then
-                TPReturner()
+        
+        local function IsTarget()
+            return (Player.Character and Player.Character:FindFirstChild("Highlight"))
+        end
+        
+        local function Parry()
+            Remotes:WaitForChild("ParryButtonPress"):Fire()
+        end
+        
+        Balls.ChildAdded:Connect(function(Ball)
+            if not VerifyBall(Ball) then
+                return
             end
+            
+            local OldPosition = Ball.Position
+            local OldTick = tick()
+            
+            Ball:GetPropertyChangedSignal("Position"):Connect(function()
+                if IsTarget() then
+                    local Distance = (Ball.Position - workspace.CurrentCamera.Focus.Position).Magnitude
+                    local Velocity = (OldPosition - Ball.Position).Magnitude
+                    
+                    if (Distance / Velocity) <= 10 then
+                        Parry()
+                    end
+                end
+                
+                if (tick() - OldTick >= 1/60) then
+                    OldTick = tick()
+                    OldPosition = Ball.Position
+                end
+            end)
         end)
+
+        -- Display a notification
+        OrionLib:MakeNotification({
+            Name = "Auto Parry 1: Activated",
+            Content = "Auto Parry 1 has been activated.",
+            Time = 5
+        })
     end
+})
+
+local ScriptsTab = Window:MakeTab({
+    Name = "Scripts",
+    Icon = "rbxassetid://5747127696", -- Replace with your Trash Icon asset ID
+    PremiumOnly = false
+})
+
+-- Function to show a notification
+local function showNotification(title, content)
+    OrionLib:MakeNotification({
+        Name = title,
+        Content = content,
+        Time = 5
+    })
 end
 
--- If you'd like to use a script before server hopping (Like a Automatic Chest collector you can put the Teleport() after it collected everything.
-Teleport()
-end)
+ScriptsTab:AddParagraph("READ", "Scripts with 🌟 Marked in their name is considered as best scripts. More Stars More Better. | Scripts with 🔑 in their name means the script needs key. Script says 🔥 means its popular.")
 
-local rejoin = server:NewButton("Rejoin", "Rejoin the same server", function()
-    local ts = game:GetService("TeleportService")
+ScriptsTab:AddButton({
+    Name = "Remove Anti-Cheat",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Security.RemoteEvent:Destroy()
+        game:GetService("ReplicatedStorage").Security[""]:Destroy()
+        game:GetService("ReplicatedStorage").Security:Destroy()
+        game:GetService("Players").LocalPlayer.PlayerScripts.Client.DeviceChecker:Destroy()
+        showNotification("NOTIFICATION", "ANTICHEAT IS DISABLE")
+    end
+})
 
-local p = game:GetService("Players").LocalPlayer
+-- Create buttons with callbacks
+ScriptsTab:AddButton({
+    Name = "Bedol Hub 7.5 Pro Max",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/SourceLua/main/Blade_Ball.lua"))()
+        showNotification("Bedol Hub 7.5 Pro Max", "Activated")
+    end
+})
 
+ScriptsTab:AddButton({
+    Name = "Zen.cc (🔑 ZenIsBetter)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xdevslasher/zen.cc/main/zen.cchallowzenupdate.lua", true))()
+        showNotification("Zen.cc (Key: ZenIsBetter)", "Script Executed")
+    end
+})
 
+ScriptsTab:AddButton({
+    Name = "Bedol Hub V4 (🌟🌟🌟 | 🔥)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/nqxlOfc/Loaders/main/Blade_Ball.lua"))()
+        showNotification("Bedol Hub V4", "Script Executed")
+    end
+})
 
-ts:TeleportToPlaceInstance(game.PlaceId, game.JobId, p)
-end)
+ScriptsTab:AddButton({
+    Name = "Lazium Hub loader",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/InfinityMercury/Scripts/main/BladeBall/loader.lua",true))()
+        showNotification("Lazium Hub", "Script Executed")
+    end
+})
 
-local InfoSection = InfoTab:NewSection("V-Player Info-V")
+ScriptsTab:AddButton({
+    Name = "Visual Hub (🔑 IUseVisualFree)",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/DevTravDYT/dsaaswadfeszad/main/Testt'))()
+        showNotification("Visual Hub", "Script Executed")
+    end
+})
 
-local player = game.Players.LocalPlayer
+ScriptsTab:AddButton({
+    Name = "Fuji Hub",
+    Callback = function()
+        loadstring(game:HttpGet("https://shz.al/~main/dread/Fuji-Hub/script"))()
+        showNotification("Fuji Hub", "Script Executed")
+    end
+})
 
-local UsernameLabel = InfoSection:NewLabel("Username: " .. player.Name)
+ScriptsTab:AddButton({
+    Name = "Hexa Hub (🔥)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Brothinkimnoob/AUTO-PARRY-HEXA-V3/main/HEXA%20V3"))()
+        showNotification("Hexa Hub", "Executed! Be Careful when using with anticheat")
+    end
+})
 
-local player = game.Players.LocalPlayer
-local startTime = tick()
+ScriptsTab:AddButton({
+    Name = "Project Nova",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Synergy-Networks/products/main/ProjectNova/loader.lua",true))()
+        showNotification("Project Nova", "Script Executed")
+    end
+})
 
-local UserTimeLabel = InfoSection:NewLabel("User Time: 00:00:00")
+ScriptsTab:AddButton({
+    Name = "Alien Hub (🔑)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/romkich09/keySystem/main/mainKey", true))()
+    end
+})
 
-local function updateUserTimeLabel()
-    local currentTime = tick() - startTime
-    local hours = math.floor(currentTime / 3600)
-    local minutes = math.floor((currentTime % 3600) / 60)
-    local seconds = math.floor(currentTime % 60)
-    local formattedTime = string.format("%02d:%02d:%02d", hours, minutes, seconds)
+-- Add the Crazy Hub script button
+ScriptsTab:AddButton({
+    Name = "Crazy Hub (🌟)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/kmmwhocare/Crazzy-Hub/main/Blade%20Ball"))()
+        showNotification("Craazy Hub", "Script Executed")
+    end
+})
 
-    UserTimeLabel:UpdateLabel("Script Use Time: " .. formattedTime)
-end
+ScriptsTab:AddButton({
+    Name = "Ayden Hub",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/reed192512/KeySystem/main/KeySystem.txt", true))()
+        showNotification("Ayden Hub", "Script Executed")
+    end
+})
 
--- Update the label every second
-while true do
-    updateUserTimeLabel()
-    wait(1)
-end
+-- Add the Winnablez script button
+ScriptsTab:AddButton({
+    Name = "Winnable Hub",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Winnablez/Winnable/main/Loader"))()
+        showNotification("Winnable Hub", "Script Executed")
+    end
+})
+
+-- Add the Symphony Hub script button
+ScriptsTab:AddButton({
+    Name = "Symphony Hub (🔑)",
+    Callback = function()
+        local a,b,c,d=loadstring,request or http_request or (http and http.request) or (syn and syn.request),assert,"https://itsjidy.github.io/SymphonyHub/Loader.html"
+        c(a and b, "Your Executor does not support.")
+        a(b({Url=d,Method="GET"}).Body)()
+    end
+})
+
+-- Add the Lumin Hub script button
+ScriptsTab:AddButton({
+    Name = "LN Hub V4 (🌟🌟)",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/No6No6No7yt/Lumin-Hub/main/BladeV4.lua'))()
+        showNotification("Ln Hub", "Script Executed")
+    end
+})
+
+-- Create a tab "Shop" if it doesn't already exist
+local ShopTab = Window:MakeTab({
+    Name = "Shop",
+    Icon = "rbxassetid://12345678", -- Replace with an icon asset ID
+    PremiumOnly = false
+})
+
+-- Add a section "Shop"
+local ShopSection = ShopTab:AddSection({
+    Name = "Shop"
+})
+
+-- Add the "Spin Wheel" button
+ShopSection:AddButton({
+    Name = "Spin Wheel (1x Spin ⚙️)",
+    Callback = function()
+        local args = {
+            [1] = "SpinWheel"
+        }
+
+        game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
+    end
+})
+
+-- Add the "Explosion Crate (80 Coins 🪙)" button
+ShopSection:AddButton({
+    Name = "Explosion Crate (80 Coins 🪙)",
+    Callback = function()
+        local args = {
+            [1] = "PromptPurchaseCrate",
+            [2] = workspace.Spawn.Crates.NormalExplosionCrate
+        }
+
+        game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
+    end
+})
+
+-- Add the "Sword Crate (80 Coins 🪙)" button
+ShopSection:AddButton({
+    Name = "Sword Crate (80 Coins 🪙)",
+    Callback = function()
+        local args = {
+            [1] = "PromptPurchaseCrate",
+            [2] = workspace.Spawn.Crates.NormalSwordCrate
+        }
+
+        game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
+    end
+})
+
+ShopSection:AddButton({
+    Name = "💎 Premium Sword Crate (99 Robux 🧊)",
+    Callback = function()
+        local args = {
+            [1] = "PromptPurchaseCrate",
+            [2] = workspace.Spawn.Crates.PremiumSwordCrate
+        }
+
+        game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
+    end
+})
+
+ShopSection:AddButton({
+    Name = "💎 Premium Explosion Crate (99 Robux 🧊)",
+    Callback = function()
+        local args = {
+            [1] = "PromptPurchaseCrate",
+            [2] = workspace.Spawn.Crates.PremiumExplosionCrate
+        }
+
+        game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
+    end
+})
+
+ShopSection:AddButton({
+    Name = "🎃 Halloween Crate (👻 1,000 Coins)",
+    Callback = function()
+        local args = {
+           [1] = "PromptPurchaseCrate",
+           [2] = workspace.Spawn.Crates.HalloweenSwordCrate
+        }
+
+        game:GetService("ReplicatedStorage").Remote.RemoteFunction:InvokeServer(unpack(args))
+    end
+})
+
+-- Add a section "Abilities"
+local AbilitiesSection = ShopTab:AddSection({
+    Name = "Abilities"
+})
+
+-- Add a Dropdown for selecting an ability
+local AbilityDropdown = AbilitiesSection:AddDropdown({
+    Name = "Select Ability",
+    Default = "Freeze", -- Set your desired default ability
+    Options = {
+        "Freeze",
+        "Reaper",
+        "Thunder Dash",
+        "Platform",
+        "Super Jump",
+        "Telekinesis",
+        "Dash",
+        "Infinity",
+        "Blink",
+        "Quad Jump",
+        "Pull",
+        "Rapture"
+    },
+    Callback = function(selectedAbility)
+        selectedAbility = tostring(selectedAbility)
+    end
+})
+
+-- Add a button to equip the selected ability
+AbilitiesSection:AddButton({
+    Name = "Equip Ability",
+    Callback = function()
+        local selectedAbility = AbilityDropdown:Get() -- Get the selected ability from the dropdown
+            local args = {
+            [1] = selectedAbility
+        }
+
+        game:GetService("ReplicatedStorage").Remotes.Store.RequestEquipAbility:InvokeServer(unpack(args))
+    end
+})
+
+-- Create a tab "Misc" if it doesn't already exist
+local MiscTab = Window:MakeTab({
+    Name = "Misc",
+    Icon = "rbxassetid://4483345998", -- Replace with an icon asset ID
+    PremiumOnly = false
+})
+
+local trollSection = MiscTab:AddSection({
+    Name = "troll",
+})
+
+trollSection:AddButton({
+    Name = "Teleport to Lobby (Use it when on map)",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-282.2117614746094, 124.01596069335938, 149.12924194335938)
+    end
+})
+
+trollSection:AddButton({
+    Name = "Teleport outside map (Buggy)",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-690.0488891601562, 17.71648406982422, 66.18453979492188)
+    end
+})
+
+trollSection:AddToggle({
+    Name = "Clash Troll [cant off]",
+    Callback = function(state)
+        if state then
+               while state do
+               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-690.0488891601562, 17.71648406982422, 66.18453979492188)
+               wait(1)
+               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-282.2117614746094, 124.01596069335938, 149.12924194335938)
+               wait(1)
+         end
+      end
+  end
+})
+
+-- Initialize the Orion Library
+OrionLib:Init()
