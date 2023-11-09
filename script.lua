@@ -3,27 +3,27 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 
 -- Create a window
 local Window = OrionLib:MakeWindow({
-    Name = "Meta Hub 2",
+    Name = "META X",
     HidePremium = false,
     SaveConfig = true,
-    ConfigFolder = "BladeBallMetaConfig"
+    ConfigFolder = "BladeBallClassConfig"
 })
 
 -- Create a tab "Auto Parries"
-local AutoParriesTab = Window:MakeTab({
-    Name = "Auto Parry",
-    Icon = "rbxassetid://12345678", -- Replace with your icon asset ID
+local AutoTab = Window:MakeTab({
+    Name = "Auto",
+    Icon = "rbxassetid://15305655301", -- Replace with your icon asset ID
     PremiumOnly = false
 })
 
 -- Create a section
-local AutoParrySection = AutoParriesTab:AddSection({
+local AutoParrySection = AutoTab:AddSection({
     Name = "Auto Parry"
 })
 
 -- Create a button "Auto Parry 1"
 AutoParrySection:AddButton({
-    Name = "Auto Parry",
+    Name = "Start auto parry",
     Callback = function()
         local Debug = true
         local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -83,7 +83,7 @@ AutoParrySection:AddButton({
 
 local ScriptsTab = Window:MakeTab({
     Name = "Scripts",
-    Icon = "rbxassetid://5747127696", -- Replace with your Trash Icon asset ID
+    Icon = "rbxassetid://15305440966", -- Replace with your Trash Icon asset ID
     PremiumOnly = false
 })
 
@@ -99,13 +99,13 @@ end
 ScriptsTab:AddParagraph("READ", "Scripts with 🌟 Marked in their name is considered as best scripts. More Stars More Better. | Scripts with 🔑 in their name means the script needs key. Script says 🔥 means its popular.")
 
 ScriptsTab:AddButton({
-    Name = "Remove Anti-Cheat",
+    Name = "🔎 Remove Anti-Cheat",
     Callback = function()
         game:GetService("ReplicatedStorage").Security.RemoteEvent:Destroy()
         game:GetService("ReplicatedStorage").Security[""]:Destroy()
         game:GetService("ReplicatedStorage").Security:Destroy()
         game:GetService("Players").LocalPlayer.PlayerScripts.Client.DeviceChecker:Destroy()
-        showNotification("NOTIFICATION", "ANTICHEAT IS DISABLE")
+        showNotification("NOTIFICATION", "ANTICHEAT IS DISABLED!")
     end
 })
 
@@ -229,7 +229,7 @@ ScriptsTab:AddButton({
 -- Create a tab "Shop" if it doesn't already exist
 local ShopTab = Window:MakeTab({
     Name = "Shop",
-    Icon = "rbxassetid://12345678", -- Replace with an icon asset ID
+    Icon = "rbxassetid://15307571127", -- Replace with an icon asset ID
     PremiumOnly = false
 })
 
@@ -332,7 +332,13 @@ local AbilityDropdown = AbilitiesSection:AddDropdown({
         "Infinity",
         "Blink",
         "Quad Jump",
+        "Pulse",
+        "Raging Deflection",
+        "Phase Bypass",
         "Pull",
+        "Shadow Step",
+        "Invisible",
+        "Swap",
         "Rapture"
     },
     Callback = function(selectedAbility)
@@ -356,12 +362,12 @@ AbilitiesSection:AddButton({
 -- Create a tab "Misc" if it doesn't already exist
 local MiscTab = Window:MakeTab({
     Name = "Misc",
-    Icon = "rbxassetid://4483345998", -- Replace with an icon asset ID
+    Icon = "rbxassetid://15306248137", -- Replace with an icon asset ID
     PremiumOnly = false
 })
 
 local trollSection = MiscTab:AddSection({
-    Name = "troll",
+    Name = "Troll ⬇️",
 })
 
 trollSection:AddButton({
@@ -379,17 +385,75 @@ trollSection:AddButton({
 })
 
 trollSection:AddToggle({
-    Name = "Clash Troll [cant off]",
+    Name = "Ball Troll [cant off]",
     Callback = function(state)
         if state then
                while state do
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-690.0488891601562, 17.71648406982422, 66.18453979492188)
-               wait(1)
+               wait(0.5)
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-282.2117614746094, 124.01596069335938, 149.12924194335938)
                wait(1)
          end
       end
   end
+})
+
+local PlayerSwapSection = MiscTab:AddSection({
+    Name = "Custom Swap Player"
+})
+
+-- Create a dropdown for player usernames
+local PlayerDropdown = PlayerSwapSection:AddDropdown({
+    Name = "Select Player",
+    Default = "Select a player",
+    Options = {"Select a player"},
+    Callback = function(selectedPlayer)
+        -- The selectedPlayer parameter will contain the selected player's username
+        -- You can store it in a variable for later use
+        selectedPlayerUsername = selectedPlayer
+    end
+})
+
+-- Create a button for refreshing the dropdown
+PlayerSwapSection:AddButton({
+    Name = "Refresh",
+    Callback = function()
+        local players = game:GetService("Players"):GetPlayers()
+        local playerOptions = {"Select a player"}
+
+        for _, player in pairs(players) do
+            table.insert(playerOptions, player.Name)
+        end
+
+        PlayerDropdown:Refresh(playerOptions, true)
+    end
+})
+
+-- Create a button for swapping players
+PlayerSwapSection:AddButton({
+    Name = "Swap",
+    Callback = function()
+        if selectedPlayerUsername and selectedPlayerUsername ~= "Select a player" then
+            local args = {
+                [1] = game:GetService("Players"):FindFirstChild(selectedPlayerUsername).Character
+            }
+
+            game:GetService("ReplicatedStorage").Remotes.Swapped:FireServer(unpack(args))
+        else
+            -- Handle the case where no player is selected
+        end
+    end
+})
+
+local uiSection = MiscTab:AddSection({
+    Name = "UI",
+})
+
+uiSection:AddButton({
+    Name = "Destroy UI",
+    Callback = function()
+        OrionLib:Destroy()
+    end
 })
 
 -- Initialize the Orion Library
