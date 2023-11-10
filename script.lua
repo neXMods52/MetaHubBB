@@ -23,7 +23,7 @@ local AutoParrySection = AutoTab:AddSection({
 
 -- Create a button "Auto Parry 1"
 AutoParrySection:AddButton({
-    Name = "Start auto parry",
+    Name = "trash auto parry",
     Callback = function()
         local Debug = true
         local ReplicatedStorage = game:GetService("ReplicatedStorage")
