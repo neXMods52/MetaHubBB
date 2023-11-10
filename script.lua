@@ -431,7 +431,7 @@ PlayerSwapSection:AddButton({
 
 -- Create a button for swapping players
 PlayerSwapSection:AddButton({
-    Name = "Swap",
+    Name = "Swap Custom",
     Callback = function()
         if selectedPlayerUsername and selectedPlayerUsername ~= "Select a player" then
             local args = {
@@ -441,6 +441,24 @@ PlayerSwapSection:AddButton({
             game:GetService("ReplicatedStorage").Remotes.Swapped:FireServer(unpack(args))
         else
             -- Handle the case where no player is selected
+        end
+    end
+})
+
+-- Assuming you have the PlayerSwapSection from the previous code
+-- Add a toggle for NoClip
+local NoClipToggle = PlayerSwapSection:AddToggle({
+    Name = "No Clip",
+    Default = false,
+    Callback = function(value)
+        -- 'value' will be true when the toggle is enabled, and false when disabled
+        local player = game.Players.LocalPlayer
+
+        if player.Character and player.Character:FindFirstChild("Humanoid") then
+            local humanoid = player.Character:FindFirstChild("Humanoid")
+
+            -- Toggle NoClip
+            humanoid:Move(Vector3.new(0, value and 1000 or 0, 0))
         end
     end
 })
